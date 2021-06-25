@@ -1,4 +1,3 @@
-RocolaPlex
 Repositorio y HowTo para el proyecto de RocolaPlex.
 
 En la primera etapa queremos que la RocolaPlex sea una computadora que permita extraer (Rippear) 
