@@ -57,7 +57,11 @@ ssh pi@192.168.0.101
 
 passwd # Permite cambiar la contraseña del usuario "pi", se deberá introducir la contraseña anterior
 
-sudo apt update; sudo apt full-upgrade # Permite actualizar el sistema a la última versión
+sudo apt update; sudo apt full-upgrade -y # Permite actualizar el sistema a la última versión
+
+reboot # Reiniciar
+
+ssh pi@192.168.0.101 # Volver a conectarse usando el usuario "pi" y la nueva contraseña
 
 wget -O install https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install
 
