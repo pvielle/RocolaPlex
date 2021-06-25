@@ -33,7 +33,7 @@ Pasos para instalar el SO:
 
 Descomprimir el ZIP de Raspberry OS Lite.
 
-Insertar la memoria MicroSD de 64GB del kit en el lector blanco USB.
+Insertar la memoria MicroSD de 64GB del kit en el lector blanco USB e insertarlo en la PC.
 
 Seleccionar Flash from file en Etcher y seleccionar el archivo .img descompactado.
 
