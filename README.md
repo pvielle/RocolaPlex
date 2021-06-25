@@ -29,11 +29,11 @@ https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2
 Se requiere un Windows o un Mac OS o un Linux para bajar e instalar Balena Etcher:
 https://www.balena.io/etcher
 
-Pasos para instalar el SO:
+Pasos para instalar el SO y el sistema OpenMediaVault:
 
 Descomprimir el ZIP de Raspberry OS Lite.
 
-Insertar la memoria MicroSD de 64GB del kit en el lector blanco USB e insertarlo en la PC.
+Insertar la memoria MicroSD de 64GB del kit en el adaptador blanco de MicroSD a USB e insertarlo en la PC.
 
 Seleccionar Flash from file en Etcher y seleccionar el archivo .img descompactado.
 
@@ -41,10 +41,31 @@ Seleccionar destino: el USB con la memoria MicroSD.
 
 Presionar boton Flash.
 
-Al terminar de verificar la imagen, se inserta el MicroSD en la RaspBerry y se prende.
+Al terminar de verificar la imagen, se desconecta el adaptador y se vuelve a conectar.
 
+Crear archivo de nombre ssh en carpeta /boot/ del USB.
 
+Expulsar el adaptador USB, insertar la memoria MicroSD en la Rapspberry.
 
+Se deberá conectar la Raspberry a la red domestica con cable ethernet, así como a un monitor HDMI
+y enceder. Al final del arranque aparece en el monitor un mensage indicando la IP de la Raspberry.
 
+Mediante la IP establecer una conexión SSH con usuario "pi" y contraseña "raspberry" ya sea desde 
+una terminal (Mac o Linux) o por medio de Putty desde Windows. Posteriormente ejecutar los comandos
+como se indica tomando en cuenta que a partir del # son comentarios para entender el comando:
+
+ssh pi@192.168.0.101
+
+passwd                                       # Permite cambiar la contraseña del usuario "pi"
+
+                                             # Se deberá introducir primero la contraseña anterior
+
+sudo apt update; sudo apt full-upgrade
+
+wget -O install https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install
+
+chmod 755 install
+
+sudo ./install
 
 
