@@ -58,12 +58,12 @@ ssh pi@192.168.0.101
 
 passwd # Permite cambiar la contraseña del usuario "pi", se deberá introducir la contraseña anterior
 
-sudo apt update; sudo apt full-upgrade
+sudo apt update; sudo apt full-upgrade # Permite actualizar el sistema a la última versión
 
 wget -O install https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install
 
 chmod 755 install
 
-sudo ./install
+sudo ./install # Instala el sistema Open Media Vault
 
 
