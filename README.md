@@ -41,7 +41,7 @@ Seleccionar destino: el USB con la memoria MicroSD.
 
 Presionar boton Flash.
 
-Al terminar de verificar la imagen, se inserta el MicroSD en la RaspBerry y se prede.
+Al terminar de verificar la imagen, se inserta el MicroSD en la RaspBerry y se prende.
 
 
 
