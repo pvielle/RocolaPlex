@@ -56,7 +56,7 @@ como se indica tomando en cuenta que a partir del # son comentarios para entende
 
 ssh pi@192.168.0.101
 
-passwd # Permite cambiar la contraseña del usuario "pi" se deberá introducir la contraseña anterior
+passwd # Permite cambiar la contraseña del usuario "pi", se deberá introducir la contraseña anterior
 
 sudo apt update; sudo apt full-upgrade
 
