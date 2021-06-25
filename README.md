@@ -69,4 +69,7 @@ chmod 755 install
 
 sudo ./install # Instala el sistema Open Media Vault
 
+Posteriormente se recomienda leer:
+https://wiki.omv-extras.org/doku.php?id=installing_omv5_raspberry_pi
+
 
