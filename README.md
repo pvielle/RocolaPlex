@@ -59,7 +59,7 @@ passwd # Permite cambiar la contraseña del usuario "pi", se deberá introducir 
 
 sudo apt update; sudo apt full-upgrade -y # Permite actualizar el sistema a la última versión
 
-reboot # Reiniciar
+sudo reboot # Reiniciar
 
 ssh pi@192.168.0.101 # Volver a conectarse usando el usuario "pi" y la nueva contraseña
 
