@@ -19,38 +19,14 @@ https://www.amazon.com/-/es/gp/product/B08DDC36S1/ref=ox_sc_act_title_2?smid=ATV
 4- Se propone un HUB USB para no tener problemas de potencia con el USB de la RaspBerry:
 https://www.amazon.com/dp/B07Q13G9MT/ref=cm_sw_r_wa_awdb_imm_RS4P1THSZWM97CZKAZ45
 
-Se requiere instalar el sistema operativo Beta Raspberry OS Lite de 64bits. 
-https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/
+Se requiere instalar el sistema operativo Raspberry OS Lite de 64bits usando RaspBerry Pi Imager.
+https://www.raspberrypi.com/software/ La imagen está en el menú Raspberry Pi OS (Other) del Imager.
+Se recomienda preconfigurar el OS desde el botón de engrane del Imager.
+Insertar la memoria MicroSD de 64GB del kit en el adaptador blanco de MicroSD a USB e insertarlo en la PC/Mac/Linux. Expulsar el adaptador USB, insertar la memoria MicroSD en la Rapspberry.
 
-Archivo:
-https://downloads.raspberrypi.org/raspios_lite_arm64/images/raspios_lite_arm64-2021-05-28/2021-05-07-raspios-buster-arm64-lite.zip
+Se deberá conectar la Raspberry a la red domestica con cable ethernet, o WiFi si se preconfguró el sistem en del Imager, así como a un monitor HDMI y enceder. Al final del arranque aparece en el monitor un mensage indicando la IP de la Raspberry.
 
-Se requiere un Windows o un Mac OS o un Linux para bajar e instalar Balena Etcher:
-https://www.balena.io/etcher
-
-Pasos para instalar el SO y el sistema OpenMediaVault:
-
-Descomprimir el ZIP de Raspberry OS Lite.
-
-Insertar la memoria MicroSD de 64GB del kit en el adaptador blanco de MicroSD a USB e insertarlo en la PC.
-
-Seleccionar Flash from file en Etcher y seleccionar el archivo .img descompactado.
-
-Seleccionar destino: el USB con la memoria MicroSD.
-
-Presionar boton Flash.
-
-Al terminar de verificar la imagen, se desconecta el adaptador y se vuelve a conectar.
-
-Crear archivo de nombre ssh en carpeta /boot/ del USB.
-
-Expulsar el adaptador USB, insertar la memoria MicroSD en la Rapspberry.
-
-Se deberá conectar la Raspberry a la red domestica con cable ethernet, así como a un monitor HDMI
-y enceder. Al final del arranque aparece en el monitor un mensage indicando la IP de la Raspberry.
-
-Mediante la IP establecer una conexión SSH con usuario "pi" y contraseña "raspberry" ya sea desde 
-una terminal (Mac o Linux) o por medio de Putty desde Windows. Posteriormente ejecutar los comandos
+Mediante la IP establecer una conexión SSH con usuario "pi" y contraseña "raspberry" (o la preconfigurada) ya sea desde una terminal (Mac o Linux) o por medio de Putty desde Windows. Posteriormente ejecutar los comandos
 como se indica tomando en cuenta que a partir del # son comentarios para entender el comando:
 
 ssh pi@192.168.0.101
@@ -63,13 +39,17 @@ sudo reboot # Reiniciar
 
 ssh pi@192.168.0.101 # Volver a conectarse usando el usuario "pi" y la nueva contraseña
 
-wget -O install https://github.com/OpenMediaVault-Plugin-Developers/installScript/raw/master/install
+Instalar Plex Media Server:
+sudo su -
+wget -O - https://downloads.plex.tv/plex-keys/PlexSign.key | gpg --dearmor > /usr/share/keyrings/plex.gpg
+echo deb [signed-by=/usr/share/keyrings/plex.gpg] https://downloads.plex.tv/repo/deb public main > /etc/apt/sources.list.d/plexmediaserver.list
+apt update
+apt install plexmediaserver
 
-chmod 755 install
+Verificar que Plex Server funciona:
+systemctl status plexmediaserver
 
-sudo ./install # Instala el sistema Open Media Vault
+Instalar Docker:
 
-Posteriormente se recomienda leer:
-https://wiki.omv-extras.org/doku.php?id=installing_omv5_raspberry_pi
-
+https://github.com/rix1337/docker-ripper
 
